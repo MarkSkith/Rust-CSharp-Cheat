@@ -1,0 +1,86 @@
+﻿<Window x:Class="Impure.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Impure"
+        mc:Ignorable="d"
+        Title="Impure" Height="300" Width="500" ResizeMode="NoResize" WindowStyle="None" Background="#FF333333" Foreground="#FF333333" Loaded="Window_Loaded" MouseDown="Window_MouseDown">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.LayoutTransform>
+            <ScaleTransform x:Name="ScaleTransform" ScaleX="1.0" ScaleY="1.0" CenterX="1.0" CenterY="1.0" />
+        </Grid.LayoutTransform>
+        <Grid Name="TopBox" HorizontalAlignment="Left" Height="30" Margin="0,0,0,0" VerticalAlignment="Top" Width="500" Background="#FF3C3C3C">
+            <Label Name="TitleBox" Content="Impure" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center" Foreground="White"/>
+            <Button Name="CloseButton" Content="X" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="22" Foreground="White" Click="CloseButton_Click"/>
+            <Button Name="MiniButton" Content="_" Style="{StaticResource {x:Static ToolBar.ButtonStyleKey}}" HorizontalAlignment="Right" VerticalAlignment="Top" Width="22" Foreground="White" Margin="0,0,22,0" Click="MiniButton_Click"/>
+        </Grid>
+        <TabControl HorizontalAlignment="Left" Height="270" Grid.Row="1" VerticalAlignment="Top" Width="500" BorderBrush="Black">
+            <TabItem Header="Aimbot" Width="121" Background="#FF333333" Foreground="White" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid Background="#FF333333" Margin="-5,-2,-5,-5" >
+                    <CheckBox Name="aimbotCB" Content="Aimbot" HorizontalAlignment="Center" Margin="-300,9.6,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="aimbotCB_Checked" Unchecked="aimbotCB_Unchecked"/>
+                    <CheckBox Name="nodeAimCB" Content="Node Aim" HorizontalAlignment="Center" Margin="-300,30,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="nodeAimCB_Checked" Unchecked="nodeAimCB_Unchecked"/>
+                    <CheckBox Name="randomBoneCB" Content="Random Bone" HorizontalAlignment="Center" Margin="-283,50,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="110" Foreground="White" Checked="randomBoneCB_Checked" Unchecked="randomBoneCB_Unchecked"/>
+                    <CheckBox Name="fatBulletCB" Content="Fat Bullet" HorizontalAlignment="Center" Margin="-300,70,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="fatBulletCB_Checked" Unchecked="fatBulletCB_Unchecked"/>
+                    <CheckBox Name="runShootCB" Content="Run Shoot" HorizontalAlignment="Center" Margin="-300,90,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="runShootCB_Checked" Unchecked="runShootCB_Unchecked"/>
+                    <CheckBox Name="jumpAimCB" Content="Jump Aim" HorizontalAlignment="Center" Margin="-300,110,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="jumpAimCB_Checked" Unchecked="jumpAimCB_Unchecked"/>
+                    <CheckBox Name="recoilSliderCB" Content="Recoil Slider" HorizontalAlignment="Center" Margin="-300,130,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="recoilSliderCB_Checked" Unchecked="recoilSliderCB_Unchecked"/>
+                    <Slider Name="recoilSlider" Minimum="0" Maximum="1000" Value="0" Margin="110,129,10,100" ValueChanged="recoilSlider_ValueChanged"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="ESP" Width="125" Background="#FF333333" Foreground="White" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid Background="#FF333333" Margin="-5,-2,-5,-5">
+                    <CheckBox Name="playersCB" Content="Players" HorizontalAlignment="Center" Margin="-300,9.6,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="playersCB_Checked" Unchecked="playersCB_Unchecked"/>
+                    <CheckBox Name="npcCB" Content="NPC" HorizontalAlignment="Center" Margin="-300,30,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="npcCB_Checked" Unchecked="npcCB_Unchecked"/>
+                    <CheckBox Name="sleepersCB" Content="Sleepers" HorizontalAlignment="Center" Margin="-300,50,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="sleepersCB_Checked" Unchecked="sleepersCB_Unchecked"/>
+                    <CheckBox Name="radarCB" Content="Radar" HorizontalAlignment="Center" Margin="-300,70,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="radarCB_Checked" Unchecked="radarCB_Unchecked"/>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Loot ESP" Width="125" Background="#FF333333" Foreground="White" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid Background="#FF333333" Margin="-5,-2,-5,-5">
+                    <CheckBox Name="sulfurOreCB" Content="Sulfur Ore" HorizontalAlignment="Center" Margin="-300,9.6,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="sulfurOreCB_Checked" Unchecked="sulfurOreCB_Unchecked"/>
+                    <CheckBox Name="stoneOreCB" Content="Stone Ore" HorizontalAlignment="Center" Margin="-300,30,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="stoneOreCB_Checked" Unchecked="stoneOreCB_Unchecked"/>
+                    <CheckBox Name="metalOreCB" Content="Metal Ore" HorizontalAlignment="Center" Margin="-300,50,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="metalOreCB_Checked" Unchecked="metalOreCB_Unchecked"/>
+                    <CheckBox Name="droppedGunsCB" Content="Dropped Guns" HorizontalAlignment="Center" Margin="-284,70,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="110" Foreground="White" Checked="droppedGunsCB_Checked" Unchecked="droppedGunsCB_Unchecked"/>
+                    <CheckBox Name="droppedItemsCB" Content="Dropped Items" HorizontalAlignment="Center" Margin="-284,90,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="110" Foreground="White" Checked="droppedItemsCB_Checked" Unchecked="droppedItemsCB_Unchecked"/>
+                    <CheckBox Name="clothCB" Content="Cloth" HorizontalAlignment="Center" Margin="-300,110,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="clothCB_Checked" Unchecked="clothCB_Unchecked"/>
+                    <CheckBox Name="stashTrapsCB" Content="Stash/Traps" HorizontalAlignment="Center" Margin="-300,130,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="stashTrapsCB_Checked" Unchecked="stashTrapsCB_Unchecked"/>
+                    <CheckBox Name="helicopterCB" Content="Helicopter" HorizontalAlignment="Center" Margin="-300,150,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="helicopterCB_Checked" Unchecked="helicopterCB_Unchecked"/>
+                    <CheckBox Name="foodCB" Content="Food" HorizontalAlignment="Center" Margin="-300,170,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="foodCB_Checked" Unchecked="foodCB_Unchecked"/>
+                    <CheckBox Name="supplyDropCB" Content="Supply Drops" HorizontalAlignment="Center" Margin="-300,190,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="supplyDropCB_Checked" Unchecked="supplyDropCB_Unchecked"/>
+                    <CheckBox Name="bestCratesCB" Content="Best Crates" HorizontalAlignment="Center" Margin="-300,210,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="bestCratesCB_Checked" Unchecked="bestCratesCB_Unchecked"/>
+                    <CheckBox Name="lowCratesCB" Content="Low Crates" HorizontalAlignment="Center" Margin="-30,9.6,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="lowCratesCB_Checked" Unchecked="lowCratesCB_Unchecked"/>
+                    <CheckBox Name="animalsCB" Content="Animals" HorizontalAlignment="Center" Margin="-30,30,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="animalsCB_Checked" Unchecked="animalsCB_Unchecked"/>
+                    <CheckBox Name="barrelsCB" Content="Barrels" HorizontalAlignment="Center" Margin="-30,50,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="barrelsCB_Checked" Unchecked="barrelsCB_Unchecked"/>
+                    <CheckBox Name="deadPlayersCB" Content="Dead Players" HorizontalAlignment="Center" Margin="-14,70,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="110" Foreground="White" Checked="deadPlayersCB_Checked" Unchecked="deadPlayersCB_Unchecked"/>
+                    <CheckBox Name="vehiclesCB" Content="Vehicles" HorizontalAlignment="Center" Margin="-30,90,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="vehiclesCB_Checked" Unchecked="vehiclesCB_Unchecked"/>
+                    <CheckBox Name="toolCupboardCB" Content="Tool Cupboard" HorizontalAlignment="Center" Margin="-14,110,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="110" Foreground="White" Checked="toolCupboardCB_Checked" Unchecked="toolCupboardCB_Unchecked"/>
+                    <CheckBox Name="raidsCB" Content="Raids" HorizontalAlignment="Center" Margin="-30,130,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="raidsCB_Checked" Unchecked="raidsCB_Unchecked"/>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Misc" Width="125" Background="#FF333333" Foreground="White" Margin="0,-1,0,0" VerticalAlignment="Top">
+                <Grid Background="#FF333333" Margin="-5,-2,-5,-5">
+                    <CheckBox Name="debugCamCB" Content="Debug Cam" HorizontalAlignment="Center" Margin="-300,9.6,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="debugCamCB_Checked" Unchecked="debugCamCB_Unchecked"/>
+                    <CheckBox Name="climbHackCB" Content="Climb Hack" HorizontalAlignment="Center" Margin="-300,30,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="climbHackCB_Checked" Unchecked="climbHackCB_Unchecked"/>
+                    <CheckBox Name="instaEokaCB" Content="100% Eoka" HorizontalAlignment="Center" Margin="-300,50,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="instaEokaCB_Checked" Unchecked="instaEokaCB_Unchecked"/>
+                    <CheckBox Name="superJumpCB" Content="Super Jump" HorizontalAlignment="Center" Margin="-300,70,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="superJumpCB_Checked" Unchecked="superJumpCB_Unchecked"/>
+                    <CheckBox Name="walkOnWaterCB" Content="Walk On Water (X to activate)" HorizontalAlignment="Center" Margin="-194,90,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="200" Foreground="White" Checked="walkOnWaterCB_Checked" Unchecked="walkOnWaterCB_Unchecked"/>
+                    <CheckBox Name="farMeleeCB" Content="Far Melee" HorizontalAlignment="Center" Margin="-300,110,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="farMeleeCB_Checked" Unchecked="farMeleeCB_Unchecked"/>
+                    <CheckBox Name="noSpreadCB" Content="No Spread" HorizontalAlignment="Center" Margin="-300,130,90.2,0" Grid.Row="1" VerticalAlignment="Top" FontSize="14" Width="94" Foreground="White" Checked="noSpreadCB_Checked" Unchecked="noSpreadCB_Unchecked"/>
+
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+
+    </Grid>
+</Window>
