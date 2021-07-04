@@ -1,0 +1,2 @@
+# Rust-CSharp-Cheat
+i decided to release this as i have abanoded this project it was a fun project to switch my coding style around from c++ to c# i know it sounds stupid but the driver is created in c++ and uses IOCTL communitcation method you can find my other repository where i released my driver i will release my Usermode reference so you can all enjoy this learn from it, it has ESP + AIMBOT + MISC Functions as well as a Login + Auth system enjoy this project :) 
